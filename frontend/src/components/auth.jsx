@@ -4,20 +4,20 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 const STATUSES = [
   { key: "à faire", label: "À FAIRE", color: "bg-blue-200", border: "border-blue-400" },
-  { key: "en cours", label: "EN COURS", color: "bg-yellow-200", border: "border-yellow-400" },
+  { key: "en cours", label: "EN COURS", color: "bg-pink-200", border: "border-pink-400" },
   { key: "terminée", label: "TERMINÉE", color: "bg-green-200", border: "border-green-500" },
 ];
 
 const getStatusIcon = (key) => {
   if (key === "à faire") return <span className="text-blue-500 text-3xl">📋</span>;
-  if (key === "en cours") return <span className="text-yellow-500 text-3xl">⏳</span>;
+  if (key === "en cours") return <span className="text-pink-500 text-3xl">⏳</span>;
   if (key === "terminée") return <span className="text-green-600 text-3xl">✅</span>;
   return null;
 };
 
 const getStatusTextColor = (key) => {
   if (key === "à faire") return "text-blue-600";
-  if (key === "en cours") return "text-yellow-600";
+  if (key === "en cours") return "text-pink-600";
   if (key === "terminée") return "text-green-700";
   return "";
 };
@@ -127,14 +127,21 @@ axiosInstance.get("/tasks")
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-between">
       <div className="w-full">
         <div
-          className="w-full h-72 bg-cover bg-center flex items-center justify-center"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(101, 67, 255, 0.5), rgba(100, 200, 255, 0.5)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80')",
-          }}
-        >
-          <h1 className="text-5xl font-extrabold text-white">My To-Do List</h1>
-        </div>
+  className="w-full h-72 bg-cover bg-center flex flex-col items-center justify-center"
+  style={{
+    backgroundImage:
+      "linear-gradient(to right, rgba(101, 67, 255, 0.5), rgba(100, 200, 255, 0.5)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80')",
+  }}
+>
+  <h1 className="text-5xl font-extrabold text-white flex items-center gap-3">
+    <span className="text-pink-300 drop-shadow text-5xl">🌸</span>
+    <span>My To-Do List</span>
+    <span className="text-pink-300 drop-shadow text-5xl">🌸</span>
+  </h1>
+  <p className="text-xl text-white mt-4  drop-shadow text-center font-bold">
+    Organisez vos journées, accomplissez vos objectifs et gardez le sourire chaque jour !
+  </p>
+</div>
 
         <div className="w-full flex flex-col items-center">
           {message && (
@@ -150,7 +157,7 @@ axiosInstance.get("/tasks")
           >
             <input
               type="text"
-              className="border rounded-l px-3 py-2 flex-1"
+               className="border-2 border-black focus:border-black rounded-l px-3 py-2 flex-1 outline-none transition"
               placeholder={editId ? "Modifier la tâche" : "Nouvelle tâche"}
               value={editId ? editTitle : newTask}
               onChange={(e) => (editId ? setEditTitle(e.target.value) : setNewTask(e.target.value))}
