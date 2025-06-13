@@ -6,12 +6,12 @@ DESCRIPTION
 Cette application web permet de gérer des tâches à travers une interface conviviale. Elle a été développée dans un cadre pédagogique et utilise une architecture fullstack conteneurisée avec Docker.
 
 TECHNOLOGIES UTILISEES
-Composant         | Technologie                
-|----------------------------------------
-| Frontend ------ -> React + Tailwind CSS     
-| Backend ---------> Node.js + Express        
-| Base de données--> PostgreSQL               
-| Déploiement -----> Docker + Docker Compose  
+                
+
+React + Tailwind CSS     
+Node.js + Express        
+PostgreSQL               
+Docker + Docker Compose  
 
 
 
@@ -146,3 +146,20 @@ LANCEMENT DE L'APPLICATION
 # Acceder a l'application via le navigateur : 
         http://localhost:3001
 
+
+
+# MEMBRES DU GROUPE
+
+DIOP FATIMA
+OUEDRAOGO JOSEE MANUELLA
+ZOUNGRANA ASSSOMPTION FLORA
+
+
+# REPARTITION DES RÔLES
+- Developpement : OUEDRAOGO JOSEE MANUELLA
+- Backend-db,Nginx:  DIOP FATIMA
+- Infrastructure & Deploiement : 
+Docker : ZOUNGRANA ASSOMPTION FLORA
+
+
+ 
