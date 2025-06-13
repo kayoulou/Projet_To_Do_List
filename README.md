@@ -103,11 +103,9 @@ Après finalisation et validation des fonctionnalités, la branche develop a ét
 - Lancer les conteneurs Docker (dans le dossier du projet)
  docker-compose up --build
 
--Tester la connexion à PostgreSQL
- docker exec -it db psql -U postgres -c "\l"
 
 - Se connecter manuellement a la DB
- docker exec -it db psql -U postgres
+docker exec -it projet_to_do_list-db-1 psql -U postgres -d todo
 
 Le fichier init.sql présent dans le dossier backend est automatiquement exécuté au démarrage du conteneur PostgreSQL grâce à la configuration dans docker-compose.yml.
 Il crée la  table T_todo nécessaire à l’application 
