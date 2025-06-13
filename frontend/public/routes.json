@@ -1,6 +1,0 @@
-{
-    "/api/*": "/$1",
-    "/users": "/users",
-    "/smartphones": "/smartphones",
-    "/smartphones/:id": "/smartphones/:id"
-  }
